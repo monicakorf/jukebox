@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link href="ipod.css" rel="stylesheet" type="text/css">
+     
+ <script src="http://code.jquery.com/jquery-latest.js"></script>
+         
+    </head>
+<body>
+    
+    <img src="ipod.png" alt = "ipod" usemap="#ipodmap">
+    
+    <map name = "ipodmap" id="ipodmap">
+    <area shape="rect" coords="249,366,305,424" href= "#" onclick="showImage()">
+    <area shape = "rect" coords="99,368,162,425" alt="prevSong" href="#" onclick= "prevImg()">
+        <area shape = "rect" coords="169,289,235,349" alt= "menu" href="#" onclick="menu()">
+        <area shape = "rect" coords="169,440,235,500" alt= "play" href="#" onclick="stopit()">
+    </map>
+    <div class="mydiv"></div>
+    
+
+    <script>
+        {$('.mydiv').html("<img src= 0.jpg>")}
+   
+        var image = 0;
+   function showImage(musicfile,picfile){
+       image += 1;
+       musicfile=image+".mp3";
+       picfile=image+".jpg";
+       if (image>5) {image=0;}
+     
+       
+{$('.mydiv').html("<audio id='mfile' autoplay=\"true\"><source src=" + musicfile + " type=\"audio/mpeg\" /></audio><img src="+picfile +">")}
+   }
+         function prevImg(musicfile,picfile){
+        if(image<1) {image = 6}
+       image -= 1;
+       musicfile=image+".mp3";
+       picfile=image+".jpg";
+          
+             
+{$('.mydiv').html("<audio id='mfile' autoplay=\"true\"><source src=" + musicfile + " type=\"audio/mpeg\" /></audio><img src="+picfile +">")}
+   }
+        
+    function menu(){
+		{$('.mydiv').html("<img src= 0.jpg>")}
+   
+        var image = 0;
+		
+	}
+        var paused = 0;
+        function stopit() { 
+    if(paused < 1){ mfile.pause(); 
+                   paused = 2}
+    else{ mfile.play();
+         paused = 0 }
+} 
+        
+        
+        
+    </script>
+    </body></html>

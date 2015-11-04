@@ -1,0 +1,14 @@
+body{
+ background-color: white;   
+    
+    
+}
+
+.mydiv{
+	height: 243px;
+	width: 331px;
+	background-color: black;
+	position: absolute;
+	left: 45px;
+	top: 40px;
+}
